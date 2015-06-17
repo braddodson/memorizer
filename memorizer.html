@@ -1,0 +1,89 @@
+<html>
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript">
+        var show = false;
+        function hideClick()
+        {
+            if (show) {
+                $('#source').show('slow');
+                $('#hideLink').html('hide');
+                show = false;
+            }
+            else {
+                $('#source').hide('slow');
+                $('#hideLink').html('show');
+                show = true;
+            }
+        }
+
+        function checkText(e)
+        {
+            var filter = /\W+/g;
+            var filteredRef = $('#source').val().replace(filter, " ");
+            var filteredPractice = $('#practice').val().replace(filter, " ");
+
+            var TABKEY = 9;
+            if (e.keyCode == TABKEY) {
+                var remainingText = filteredRef.substring(filteredPractice.length);
+                var idx = remainingText.indexOf(' ');
+                if (idx === -1)
+                    idx = remainingText.length;
+                else
+                    idx = idx + 1;
+                var textToAdd = remainingText.substring(0, idx);
+                var oldLen = $('#practice').val().length;
+                $('#practice').val($('#practice').val() + textToAdd);
+                document.getElementById('practice').selectionStart = oldLen;
+                document.getElementById('practice').selectionEnd = oldLen + textToAdd.length - 1;
+
+                if (e.preventDefault) {
+                    e.preventDefault();
+                }
+                return false;
+            }
+
+            if (filteredRef.toUpperCase().trim().indexOf(filteredPractice.toUpperCase().trim()) === 0)
+            {
+                $('#practice').css("background-color","white");
+            }
+            else {
+                $('#practice').css("background-color", "red");
+            }
+        }
+
+        function practiceSelect()
+        {
+            if (!show)
+            {
+                hideClick();
+            }
+        }
+    </script>
+    <head>
+        <style>
+            textarea {
+	            width: 600px;
+	            height: 120px;
+	            border: 3px solid #cccccc;
+	            padding: 5px;
+	            font-family: Segoe UI, sans-serif
+            }
+            a {
+                font-family: Segoe UI, sans-serif;
+            }
+            h2 {
+                font-family: Segoe UI, sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Source Text</h2>
+        <div>
+            <textarea id="source">I am the light of the world. Whoever follows me will never walk in darkness, but will have the light of life</textarea>
+        </div>
+        <a href="javascript:void(0);" onclick="hideClick()" id="hideLink">hide</a>
+        <h2>Practice:</h2>
+        <textarea id="practice" onkeydown="checkText(event)" onclick="practiceSelect()"></textarea>
+    </body>
+
+</html>
