@@ -1,6 +1,14 @@
 <html>
     <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.0.min.js"></script>
     <script type="text/javascript">
+        $(document).ready(function () {
+            var v = decodeURIComponent(window.location.hash.substring(1));
+            if (v.length > 0)
+            {
+                $('#source').val(v);
+            }
+        });
+
         var show = false;
         function hideClick()
         {
@@ -24,17 +32,7 @@
 
             var TABKEY = 9;
             if (e.keyCode == TABKEY) {
-                var remainingText = filteredRef.substring(filteredPractice.length);
-                var idx = remainingText.indexOf(' ');
-                if (idx === -1)
-                    idx = remainingText.length;
-                else
-                    idx = idx + 1;
-                var textToAdd = remainingText.substring(0, idx);
-                var oldLen = $('#practice').val().length;
-                $('#practice').val($('#practice').val() + textToAdd);
-                document.getElementById('practice').selectionStart = oldLen;
-                document.getElementById('practice').selectionEnd = oldLen + textToAdd.length - 1;
+                hint();
 
                 if (e.preventDefault) {
                     e.preventDefault();
@@ -49,6 +47,24 @@
             else {
                 $('#practice').css("background-color", "red");
             }
+        }
+
+        function hint()
+        {
+            var filter = /\W+/g;
+            var filteredRef = $('#source').val().replace(filter, " ");
+            var filteredPractice = $('#practice').val().replace(filter, " ");
+            var remainingText = filteredRef.substring(filteredPractice.length);
+            var idx = remainingText.indexOf(' ');
+            if (idx === -1)
+                idx = remainingText.length;
+            else
+                idx = idx + 1;
+            var textToAdd = remainingText.substring(0, idx);
+            var oldLen = $('#practice').val().length;
+            $('#practice').val($('#practice').val() + textToAdd);
+            document.getElementById('practice').selectionStart = oldLen;
+            document.getElementById('practice').selectionEnd = oldLen + textToAdd.length - 1;
         }
 
         function practiceSelect()
@@ -80,6 +96,21 @@
                 font-size: 10pt;
                 margin-top: 0px;
             }
+
+            #mobilehint {
+                display: none;
+            }
+
+            @media only screen and (max-width : 640px) {
+                #desktophint {
+                    display: none;
+                }
+
+                #mobilehint
+                {
+                    display: inline;
+                }   
+            }
         </style>
     </head>
     <body>
@@ -89,7 +120,10 @@
         </div>
         <a href="javascript:void(0);" onclick="hideClick()" id="hideLink">hide</a>
         <h2>Practice:</h2>
-        <p>Press tab for a hint</p>
+        <p id="desktophint">Press tab for a hint</p>
+        <div id="mobilehint">
+            <button onclick="hint()">Tap here for a hint</button>
+        </div>
         <textarea id="practice" onkeydown="checkText(event)" onclick="practiceSelect()"></textarea>
     </body>
 
