@@ -29,6 +29,6 @@ Mds Night Videos
 | Jul 27 | Jim Yost | [Nations](https://vimeopro.com/mosaiccommunitychurch/mds-night-school/video/137299123) |
 | Aug 3  | Jim Yost | [Discipleship - audio only](https://vimeopro.com/mosaiccommunitychurch/mds-night-school/video/137306982) |
 | Aug 10 | Andrew Bach | [Fasting - partial](https://vimeopro.com/mosaiccommunitychurch/mds-night-school/video/137306604) |
-| Aug 17 | Andrew Bach & Renae Burford | [Spiritual Warfare](https://vimeopro.com/mosaiccommunitychurch/mds-night-school/video/137897395) |
+| Aug 17 | Andrew Bach & Renae Burford | [Spiritual Warfare](https://vimeopro.com/mosaiccommunitychurch/mds-night-school/video/139651012) |
 | Aug 24 | | 7 steps |
-| Aug 31 | Andrew Bach | Spiritual Authority (pending)
+| Aug 31 | Andrew Bach | Spiritual Authority (from day school) [Day 1](https://vimeopro.com/mosaiccommunitychurch/mds-night-school/video/139661143) [Day 2](https://vimeopro.com/mosaiccommunitychurch/mds-night-school/video/139661183) |
