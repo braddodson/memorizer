@@ -32,3 +32,6 @@ Mds Night Videos
 | Aug 17 | Andrew Bach & Renae Burford | [Spiritual Warfare](https://vimeopro.com/mosaiccommunitychurch/mds-night-school/video/139651012) |
 | Aug 24 | | 7 steps |
 | Aug 31 | Andrew Bach | Spiritual Authority (from day school) [Day 1](https://vimeopro.com/mosaiccommunitychurch/mds-night-school/video/139661143) [Day 2](https://vimeopro.com/mosaiccommunitychurch/mds-night-school/video/139661183) |
+| Sep 7 | | Labor Day - No Class |
+| Sep 14 | Nate Bobbett | [Spiritual Gifts](https://vimeo.com/140867377) |
+| Sep 21 | Matt Hatch | [Transitions](https://vimeo.com/140868944) |
